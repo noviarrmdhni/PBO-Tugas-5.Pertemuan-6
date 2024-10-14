@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data Alat Selam</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Edit Data Alat Selam</h2>
+    <form action="/update/<%= alat.id %>" method="post">
+        <label for="nama_alat">Nama Alat:</label>
+        <input type="text" id="nama_alat" name="nama_alat" value="<%= alat.nama_alat %>" required><br>
+
+        <label for="kategori">Kategori:</label>
+        <input type="text" id="kategori" name="kategori" value="<%= alat.kategori %>"><br>
+
+        <label for="kondisi">Kondisi:</label>
+        <input type="text" id="kondisi" name="kondisi" value="<%= alat.kondisi %>"><br>
+
+        <label for="stok">Stok:</label>
+        <input type="number" id="stok" name="stok" value="<%= alat.stok %>"><br>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Alat Selam</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Sesuaikan path ke file style.css -->
+</head>
+<body>
+    <h1>Daftar Alat Selam</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nama Alat</th>
+            <th>Kategori</th>
+            <th>Kondisi</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+        </tr>
+        <% alatselam.forEach(alat => { %>
+        <tr>
+            <td><%= alat.id %></td>
+            <td><%= alat.nama_alat %></td>
+            <td><%= alat.kategori %></td>
+            <td><%= alat.kondisi %></td>
+            <td><%= alat.stok %></td>
+            <td>
+                <a href="/edit/<%= alat.id %>">Edit</a>
+                <a href="/delete/<%= alat.id %>">Hapus</a>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+
+    <h2>Tambah Alat Baru</h2>
+    <form action="/add" method="post">
+        <label for="nama_alat">Nama Alat:</label>
+        <input type="text" id="nama_alat" name="nama_alat" required><br>
+
+        <label for="kategori">Kategori:</label>
+        <input type="text" id="kategori" name="kategori"><br>
+
+        <label for="kondisi">Kondisi:</label>
+        <input type="text" id="kondisi" name="kondisi"><br>
+
+        <label for="stok">Stok:</label>
+        <input type="number" id="stok" name="stok"><br>
+
+        <button type="submit">Tambah</button>
+    </form>
+</body>
+</html>
